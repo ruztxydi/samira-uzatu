@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тойға шақыру</title>
+
+<!-- Шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#000;
+  color:#C9A24D; /* ЗОЛОТО — основной цвет */
+  overflow-x:hidden;
+}
+
+/* СЕКЦИЯ */
+.section{
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+/* ЦЕНТРОВКА */
+.center{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
+
+.top-center{
+  position:absolute;
+  top:28%;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  text-align:center;
+}
+
+/* КОНТЕНТ */
+.content{
+  max-width:420px;
+}
+
+/* ЗАГОЛОВКИ */
+.greeting{
+  font-family: 'Playfair Display', serif;
+  font-size:40px;
+  color:#d56d7d; /* кастомный цвет */
+  margin-bottom:18px;
+}
+
+/* ОСНОВНОЙ ТЕКСТ */
+.text{
+  font-size:15px;
+  line-height:1.8;
+  color:#C9A24D; /* золото */
+}
+
+/* ТАЙМЕР */
+.timer{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+}
+
+.time-box{
+  background:rgba(255,255,255,0.92);
+  border-radius:16px;
+  padding:16px 14px;
+  min-width:74px;
+}
+
+.time-box span{
+  display:block;
+  font-family:'Playfair Display', serif;
+  font-size:32px;
+  font-weight:500;
+  color:#d56d7d; /* заголовочный цвет */
+}
+
+.time-box small{
+  font-size:11px;
+  letter-spacing:1px;
+  color:#C9A24D; /* золото */
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 СТРАНИЦА — ТОЛЬКО ФОТО -->
+<section class="section" style="background-image:url('1.png')">
+</section>
+
+<!-- 2 СТРАНИЦА — ПРИВЕТСТВИЕ -->
+<section class="section" style="background-image:url('2.png')">
+ 
+<div class="top-center">
+    <div class="content">
+      <div class="greeting">Құрметті қонақтар!</div>
+      <div class="text">
+<br>
+<br>
+        Өміріміздегі ең қымбат әрі мағыналы
+        сәттердің бірін сіздермен бірге
+        қарсы алғымыз келеді.
+        <br><br>
+        Осы ерекше күні қуанышымызға
+        ортақтасып, ақ ниет тілектеріңізбен
+        бөліссеңіздер, біз үшін зор бақыт.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- 3 СТРАНИЦА — ТАЙМЕР -->
+<section class="section" style="background-image:url('3.png')">
+
+  <div class="top-center">
+    <div class="content">
+      <div class="timer">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>КҮН</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>САҒАТ</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>МИНУТ</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>СЕКУНД</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- 4 СТРАНИЦА 2GIS -->
+<section class="section" style="background-image:url('4.png')">
+</section>
+
+<!-- 5 СТРАНИЦА -->
+<section class="section" style="background-image:url('5.png')">
+</section>
+
+
+<!-- СКРИПТ ТАЙМЕРА -->
+<script>
+const weddingDate = new Date("February 12, 2026 17:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const d = weddingDate - now;
+
+  days.innerText = Math.floor(d / (1000 * 60 * 60 * 24));
+  hours.innerText = Math.floor((d / (1000 * 60 * 60)) % 24);
+  minutes.innerText = Math.floor((d / (1000 * 60)) % 60);
+  seconds.innerText = Math.floor((d / 1000) % 60);
+}, 1000);
+</script>
+
+</body>
+</html>
